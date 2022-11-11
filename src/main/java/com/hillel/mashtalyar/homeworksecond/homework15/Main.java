@@ -37,9 +37,8 @@ public class Main {
         }).collect(Collectors.toList());
 
 
-//        final List<String>stringStream=Arrays.asList("1","2","3","4","5","6","7","8","9","10");
-//        stringStream.stream().skip(1).limit(8).mapToInt(e->Integer.parseInt(e)).filter(e->e%2==0).collect(Collectors.toSet());
-//PS Так и не смог разобрать с этой проблемой, коорую описал в Slack. Буду пытаться найти решение выполняя работу над ошибками и тренируясь еще работать со стимами
+        final List<String>stringStream=Arrays.asList("1","2","3","4","5","6","7","8","9","10");
+        stringStream.stream().skip(1).limit(8).map(e->Integer.parseInt(e)).filter(e->e%2==0).collect(Collectors.toSet());
 
         Stream<Integer> numbersStream = Stream.of(1, 2, 3, 4, 5, 6);
         Optional<Integer> result = numbersStream.parallel().sorted().filter(e -> e > 3).findFirst();
