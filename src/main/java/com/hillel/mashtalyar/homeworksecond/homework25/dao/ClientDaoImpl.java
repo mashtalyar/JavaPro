@@ -2,6 +2,7 @@ package com.hillel.mashtalyar.homeworksecond.homework25.dao;
 
 import com.hillel.mashtalyar.homeworksecond.homework25.model.Client;
 import com.hillel.mashtalyar.homeworksecond.homework25.util.HibernateUtil;
+import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -10,6 +11,7 @@ import javax.persistence.Query;
 import java.util.List;
 
 public class ClientDaoImpl implements  ClientDao{
+    private final Logger logger=Logger.getLogger(ClientDaoImpl.class);
     @Override
      public void save(Client client) {
         final SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
@@ -20,6 +22,7 @@ public class ClientDaoImpl implements  ClientDao{
 
         transaction.commit();
         session.close();
+        logger.debug(client.toString());
     }
 
     @Override
@@ -32,6 +35,7 @@ public class ClientDaoImpl implements  ClientDao{
 
         transaction.commit();
         session.close();
+        logger.debug(client.toString());
     }
 
     @Override
@@ -44,6 +48,7 @@ public class ClientDaoImpl implements  ClientDao{
 
         transaction.commit();
         session.close();
+        logger.debug(client.toString());
     }
 
     @Override
@@ -57,6 +62,7 @@ public class ClientDaoImpl implements  ClientDao{
         transaction.commit();
         session.close();
 
+        logger.debug(id);
         return client;
     }
 
@@ -71,7 +77,7 @@ public class ClientDaoImpl implements  ClientDao{
 
         transaction.commit();
         session.close();
-
+        logger.debug(phone);
         return clients;
     }
 

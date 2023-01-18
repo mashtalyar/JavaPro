@@ -15,7 +15,7 @@ public class Client {
     private int id;
     private String name;
     private String email;
-    @Column(name="phone")
+
     private int phone;
     private String about;
     private int age;
